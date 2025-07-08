@@ -1,7 +1,7 @@
-# 小型机器人循环管理
+# 🤖 Real-time Facial Analytics System
 
-![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Tech Stack](https://img.shields.io/badge/stack-TS%2FReact%2FWebGL-blue?style=for-the-badge)
+![API](https://img.shields.io/badge/FaceAPI-0.22.2-green?style=for-the-badge)
 
 ## 功能特性
 - 基于face-api.js的面部识别系统
@@ -10,16 +10,19 @@
 - 表情识别（开心、悲伤、愤怒等）
 - 机器人行为反馈循环
 
-## 快速开始
+## 🚀 Getting Started
 
-### 安装依赖
-```bash
-npm install
-```
+### Prerequisites
+- Node.js 18+
+- Webcam enabled browser
 
-### 开发模式
+### Installation
 ```bash
-npm run dev
+# Install core dependencies
+npm install --force
+
+# Install model utilities
+npm install @tensorflow/tfjs-core@3.18.0
 ```
 
 ### 生产构建
@@ -38,18 +41,40 @@ npm run build
 - 人脸识别模型
 - 表情识别模型
 
-## 项目结构
+## 🏗 Architecture
 ```
-├── public/            # 静态资源
-│   └── models/       # 机器学习模型
-├── src/              # 源码目录
-│   ├── core/         # 核心逻辑
-│   ├── robots-hostel # 机器人交互模块
-│   └── utils/        # 工具函数
+├── public/
+│   ├── models/       # TFJS pre-trained models
+│   └── assets/       # Media resources
+├── src/
+│   ├── core/         # Core processors
+│   │   ├── detector/  # Face detection pipeline
+│   │   ├── analyzer/  # Emotion classification
+│   │   └── reactor/   # Feedback mechanisms
+│   ├── interfaces/  # UI components
+│   │   ├── debug-panel/ # Real-time monitoring
+│   │   └── hologram/    # 3D projection view
+│   └── lib/          # Shared utilities
+│       ├── face-api/ # API wrappers
+│       └── ws-client/ # WebSocket handlers
 ```
 
-## 贡献指南
-欢迎提交Pull Request，请遵循现有代码风格。
+## 👥 Contributing
+### Development Workflow
+1. 安装依赖
+```bash
+npm ci
+```
+2. 启动开发服务器
+```bash
+npm run dev
+```
+3. 代码规范
+- 使用commitizen提交信息
+```bash
+npm run commit
+```
+- 提交前自动执行lint检查
 
 ## 许可证
 [MIT](https://choosealicense.com/licenses/mit/)
