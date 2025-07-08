@@ -1,22 +1,22 @@
-import type { JSX } from 'react'
-import RobotLoop from './robot-loop/index';
-import { useSelector } from 'react-redux'
-import type { IState } from '@src/store'
+import type { JSX } from "react";
+import RobotLoop from "./robot-loop/index";
+import { useSelector } from "react-redux";
+import type { IState } from "@src/store";
 
 const robotsMapName: RobotsMapName = {
-    loop: RobotLoop
-}
+  loop: RobotLoop,
+};
 
 const Robots = () => {
-    const { robotsName } = useSelector((state: IState) => state);
-    
-    const Robot = robotsMapName[robotsName] || null;
+  const { robotsName } = useSelector((state: IState) => state);
 
-    return <Robot />
-}
+  const Robot = robotsMapName[robotsName] || null;
+
+  return <Robot />;
+};
 
 export default Robots;
 
 interface RobotsMapName {
-    loop: () => JSX.Element
+  loop: () => JSX.Element;
 }
